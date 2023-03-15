@@ -1,5 +1,6 @@
 import sys
 from pathlib import Path
+import shutil
 
 CATEGORIES = {
     'audio': ['.mp3', '.aiff'],
@@ -7,6 +8,12 @@ CATEGORIES = {
     'video' : ['.mp4', '.avi']
     
 }
+
+
+def unpack_zip(foldername):
+    unpack = shutil.unpack_archive('path_to_archive', 'path_to_destination_folder')
+
+    return unpack
 
 def move_file(file:Path, root_dir:Path, category:str):
     if category == 'unknown':
